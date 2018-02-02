@@ -30,13 +30,37 @@
   <build>
   	<pluginManagement>
   		<plugins>
-  			<plugin>
-               <groupId>org.mortbay.jetty</groupId>
-               <artifactId>maven-jetty-plugin</artifactId>
-               <version>6.1.26</version>
-            </plugin>
+  		 <plugin>
+          <groupId>org.sonarsource.scanner.maven</groupId>
+          <artifactId>sonar-maven-plugin</artifactId>
+          <version>3.4.0.905</version>
+		 </plugin>
+		 <plugin>
+			<groupId>org.sonarsource.scanner.maven</groupId>
+			<artifactId>sonar-maven-plugin</artifactId>
+			<version>3.4.0.905</version>
+			<configuration>
+			 <destfile>${basedir}/target/coverage-report/jacoco-unit.exec</destfile>
+			 <datafile>${basedir}/target/coverage-report/jacoco-unit.exec</datafile>
+			</configuration>
+			<executions>
+			 <execution>
+			  <id>jacoco-initialize</id>
+			   <goals>
+			    <goal>prepare-agent</goal>
+			   </goals>
+			 </execution>
+			 <execution>
+			  <id>jacoco-site</id>
+			  <phase>package</phase>
+			   <goals>
+			    <goal>report</goal>
+			   </goals>
+			 </execution>
+			</executions>
+		 </plugin>
   		</plugins>
   	</pluginManagement>
-    <finalName>mobweb</finalName>
+    <finalName>MobileWebMaven</finalName>
   </build>
 </project>
