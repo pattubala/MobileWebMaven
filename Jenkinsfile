@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        bat 'make' 
-        archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+        bat 'mvn clean package' 
+       
       }
     }
   }
