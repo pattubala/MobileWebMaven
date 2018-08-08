@@ -1,9 +1,11 @@
 pipeline {
   agent any
   stages {
-    stage('Say') {
+    stage('Checkout') {
       steps {
-        echo 'hello'
+        ## checkout scm
+        sh 'make' 
+        archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
       }
     }
   }
