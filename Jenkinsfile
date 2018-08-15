@@ -3,8 +3,12 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        bat 'mvn clean package' 
-       
+        checkout scm
+      }
+    }
+    stage("build"){
+      steps {
+        sh "mvn clean package"
       }
     }
   }
