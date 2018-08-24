@@ -13,7 +13,7 @@ pipeline {
     }
     stage("Nexus"){
       steps {
-        nexusPublisher nexusInstanceId: 'Nexus_3.23', nexusRepositoryId: 'MobileWeb', packages: []
+        nexusPublisher nexusInstanceId: 'Nexus_3.23', nexusRepositoryId: 'MobileWeb', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '**/target/*.war']], mavenCoordinate: [artifactId: 'MobileWeb', groupId: 'com.ibm.services', packaging: 'war', version: '1.0-SNAPSHOT']]]
       }
     }
   }
