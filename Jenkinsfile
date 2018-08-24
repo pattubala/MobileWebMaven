@@ -11,5 +11,10 @@ pipeline {
         sh 'mvn clean package'
       }
     }
+    stage("Nexus"){
+      steps {
+        nexusPublisher nexusInstanceId: 'Nexus_3.23', nexusRepositoryId: 'MobileWeb', packages: []
+      }
+    }
   }
 }
