@@ -4,7 +4,7 @@
   <groupId>com.ibm.services</groupId>
   <artifactId>MobileWeb</artifactId>
   <packaging>war</packaging>
-  <version>1.3-SNAPSHOT</version>
+  <version>1.4-SNAPSHOT</version>
   <name>MobileWeb Maven Webapp</name>
   <url>http://maven.apache.org</url>
   
