@@ -14,7 +14,7 @@ pipeline {
     
     stage("Nexus"){
       steps {
-        nexusPublisher nexusInstanceId: 'Nexus_3.13', nexusRepositoryId: 'MobileWeb', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'C:/Program Files (x86)/Jenkins/workspace/MobileWeb_Pipeline/target/MobileWebMaven.war']], mavenCoordinate: [artifactId: 'MobileWeb', groupId: 'com.ibm.services', packaging: 'war', version: '1.4-SNAPSHOT']]]
+        nexusPublisher nexusInstanceId: 'Nexus_3.13', nexusRepositoryId: 'MobileWeb', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'C:/Program Files (x86)/Jenkins/workspace/MobileWeb_Pipeline/target/MobileWebMaven.war']], mavenCoordinate: [artifactId: 'MobileWeb', groupId: 'com.ibm.services', packaging: 'war', version: '1.5-SNAPSHOT']]]
       }
     }
     
